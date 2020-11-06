@@ -40,7 +40,7 @@ class _LoginscreenState extends State<Loginscreen> {
   }
 
   signup(name, email) async {
-    var url = "http://127.0.0.1:5000"; // iOS
+    var url = "http://127.0.0.1:5000";
     final http.Response response = await http.post(
       url,
       headers: <String, String>{
