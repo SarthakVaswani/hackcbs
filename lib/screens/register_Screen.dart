@@ -32,7 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage(
-                    'image/user.png',
+                    'assets/images/car.jpg',
                   ),
                 ),
                 SizedBox(
@@ -136,7 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               border: InputBorder.none,
                               contentPadding:
                                   EdgeInsets.only(left: 18, right: 18),
-                              hintText: 'Email I',
+                              hintText: 'Email ID',
                               hintStyle: GoogleFonts.ptSerif(
                                 textStyle:
                                     TextStyle(fontSize: 16, letterSpacing: 1.5),
