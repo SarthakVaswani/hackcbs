@@ -133,7 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(left: 18, right: 18),
-                              hintText: 'Email ID',
+                              hintText: 'Email I',
                               hintStyle:   GoogleFonts.ptSerif(
                                 textStyle: TextStyle(
                                     fontSize: 16,
