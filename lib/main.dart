@@ -18,10 +18,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Dash(),
+      home: Home(),
       routes: {
         RegisterScreen.routeName: (_) => RegisterScreen(),
-        Loginscreen.routeName: (_) => Loginscreen()
+        Loginscreen.routeName: (_) => Loginscreen(),
+        Dash.routeName: (_) => Dash()
       },
     );
   }
@@ -77,45 +78,45 @@ class _HomeState extends State<Home> {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     MaterialButton(
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(15)),
-                            width: 80,
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              "Register",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                wordSpacing: 0.75,
-                              ),
-                            )),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        height: 50,
+                        minWidth: 200,
+                        child: Text(
+                          'Register',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        color: Colors.blue,
                         onPressed: () {
                           Navigator.pushNamed(context, '/registerScreen');
                         }),
+                    SizedBox(
+                      height: 20,
+                    ),
                     MaterialButton(
-                        child: Container(
-                            width: 80,
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(15)),
-                            padding: EdgeInsets.all(10),
-                            child: Text("Login",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  wordSpacing: 0.75,
-                                ))),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        height: 50,
+                        minWidth: 200,
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        color: Colors.blue,
                         onPressed: () {
                           Navigator.pushNamed(context, '/loginScreen');
-                        })
+                        }),
                   ],
                 ),
               ),

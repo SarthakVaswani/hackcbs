@@ -6,6 +6,8 @@ class SlotPicker extends StatefulWidget {
 }
 
 class _SlotPickerState extends State<SlotPicker> {
+  var flag = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,7 +36,7 @@ class _SlotPickerState extends State<SlotPicker> {
                             offset: Offset(0, 1),
                           ),
                         ],
-                        color: Colors.blueGrey[50],
+                        color: flag == 1 ? Colors.blue : Colors.green,
                         borderRadius: BorderRadius.circular(20)),
                     height: 150,
                     width: 150,
@@ -77,7 +79,7 @@ class _SlotPickerState extends State<SlotPicker> {
                             offset: Offset(0, 1),
                           ),
                         ],
-                        color: Colors.blueGrey[50],
+                        color: flag == 1 ? Colors.blue : Colors.green,
                         borderRadius: BorderRadius.circular(20)),
                     height: 150,
                     width: 150,
@@ -104,7 +106,7 @@ class _SlotPickerState extends State<SlotPicker> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

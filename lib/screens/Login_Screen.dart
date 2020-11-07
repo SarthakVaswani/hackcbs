@@ -14,17 +14,21 @@ class Loginscreen extends StatefulWidget {
 }
 
 class _LoginscreenState extends State<Loginscreen> {
+  TextEditingController userNameController = TextEditingController();
+  bool userNameValidate = false;
+
   var email;
   var password;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.only(top: 200),
               child: Text('Login',
                   style: TextStyle(
                       color: Colors.black,
@@ -32,7 +36,7 @@ class _LoginscreenState extends State<Loginscreen> {
                       fontWeight: FontWeight.bold)),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
               child: Container(
                 padding: EdgeInsets.only(top: 1, bottom: 1),
                 decoration: BoxDecoration(
@@ -160,7 +164,41 @@ class _LoginscreenState extends State<Loginscreen> {
                   color: Colors.blue,
                   onPressed: () {
                     login(email, email);
+                    Navigator.pushNamed(context, '/dashboard');
                   }),
+            ),
+            SizedBox(
+              height: 175,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 18.0),
+                  child: Text(
+                    'New Here ?',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 28.0),
+                  child: MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      height: 30,
+                      minWidth: 57,
+                      child: Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      color: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/registerScreen');
+                      }),
+                ),
+              ],
             ),
           ],
         ),
@@ -188,9 +226,9 @@ class _LoginscreenState extends State<Loginscreen> {
     //   return response.k
     // }
 
-    if (response.statusCode == 201) {
-    } else {
-      throw Exception('Failed to send ');
-    }
+    // if (response.statusCode == 201) {
+    // } else {
+    //   throw Exception('Failed to send ');
+    // }
   }
 }

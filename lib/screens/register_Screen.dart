@@ -21,6 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Container(
             child: Column(
@@ -406,7 +407,42 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: () {
                         signup(
                             name, email, password, phone, carName, carNumber);
+                        Navigator.pushNamed(context, '/loginScreen');
                       }),
+                ),
+                SizedBox(
+                  height: 60,
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 18.0),
+                      child: Text(
+                        'Already a member ?',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: MaterialButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          height: 30,
+                          minWidth: 57,
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          color: Colors.blue,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/loginScreen');
+                          }),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -437,9 +473,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       print('ok');
     }
 
-    if (response.statusCode == 201) {
-    } else {
-      throw Exception('Failed to send.');
-    }
+    // if (response.statusCode == 201) {
+    // } else {
+    //   throw Exception('Failed to send.');
+    // }
   }
 }
