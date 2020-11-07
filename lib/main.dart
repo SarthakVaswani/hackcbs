@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackcbs/screens/Login_Screen.dart';
+import 'package:hackcbs/screens/slot.dart';
 import 'screens/dashboard.dart';
 import 'package:hackcbs/screens/register_Screen.dart';
 
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: Dash(),
       routes: {
         RegisterScreen.routeName: (_) => RegisterScreen(),
         Loginscreen.routeName: (_) => Loginscreen()
@@ -35,6 +36,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey[50],
       body: SafeArea(
           child: Column(
         children: [
@@ -73,46 +75,49 @@ class _HomeState extends State<Home> {
                     ),
                     fit: BoxFit.cover),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  MaterialButton(
-                      child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.deepPurple,
-                              borderRadius: BorderRadius.circular(5)),
-                          width: 80,
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            "Register",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              wordSpacing: 0.75,
-                            ),
-                          )),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/registerScreen');
-                      }),
-                  MaterialButton(
-                      child: Container(
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: Colors.deepPurple,
-                              borderRadius: BorderRadius.circular(5)),
-                          padding: EdgeInsets.all(10),
-                          child: Text("Login",
-                              textAlign: TextAlign.center,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    MaterialButton(
+                        child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(15)),
+                            width: 80,
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Register",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 wordSpacing: 0.75,
-                              ))),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/loginScreen');
-                      })
-                ],
+                              ),
+                            )),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/registerScreen');
+                        }),
+                    MaterialButton(
+                        child: Container(
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(15)),
+                            padding: EdgeInsets.all(10),
+                            child: Text("Login",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  wordSpacing: 0.75,
+                                ))),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/loginScreen');
+                        })
+                  ],
+                ),
               ),
             ),
           ),

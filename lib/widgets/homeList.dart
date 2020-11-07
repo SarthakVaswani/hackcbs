@@ -7,13 +7,19 @@ class HomeList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 150,
+      height: 100,
+      width: double.infinity,
       child: Card(
+        elevation: 7,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Hero(
           tag: dashList[index].id,
           child: ListTile(
-            title: Text(dashList[index].name),
+            title: Text(
+              dashList[index].name,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 35),
+            ),
           ),
         ),
       ),

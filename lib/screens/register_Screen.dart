@@ -47,7 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlue.withOpacity(0.3),
                         ),
@@ -82,7 +82,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 textStyle:
                                     TextStyle(fontSize: 16, letterSpacing: 1.5),
                               ),
-
 //                      fillColor: Colors.black87,
                             ),
                             keyboardType: TextInputType.text,
@@ -107,7 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlue.withOpacity(0.3),
                         ),
@@ -166,7 +165,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlueAccent.withOpacity(0.4),
                         ),
@@ -224,7 +223,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlue.withOpacity(0.3),
                         ),
@@ -283,7 +282,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlue.withOpacity(0.3),
                         ),
@@ -342,7 +341,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       boxShadow: [
                         new BoxShadow(
                           spreadRadius: 0.2,
-                          blurRadius: 3,
+                          blurRadius: 2,
                           offset: Offset(0, 1.5),
                           color: Colors.lightBlue.withOpacity(0.3),
                         ),
@@ -389,18 +388,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-//
-                MaterialButton(
-                    child: Text(
-                      'Confirm',
-                      style: TextStyle(
-                        color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 22.0),
+                  child: MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      height: 62,
+                      minWidth: 250,
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    color: Colors.blue[600],
-                    onPressed: () {
-                      signup(name, email, password, phone, carName, carNumber);
-                    }),
+                      color: Colors.blue,
+                      onPressed: () {
+                        signup(
+                            name, email, password, phone, carName, carNumber);
+                      }),
+                ),
               ],
             ),
           ),
