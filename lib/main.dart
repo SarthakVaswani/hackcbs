@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
                     topRight: Radius.circular(25)),
                 image: DecorationImage(
                     image: AssetImage(
-                      'image/login.png',
+                      'assets/images/login.png',
                     ),
                     fit: BoxFit.cover),
               ),

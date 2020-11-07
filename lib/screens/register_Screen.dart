@@ -32,7 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage(
-                    'assets/images/car.jpg',
+                    'assets/images/user.png',
                   ),
                 ),
                 SizedBox(
@@ -389,44 +389,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'Name'),
-//                  onChanged: (value) {
-//                    name = value;
-//                  },
-//                ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'Email'),
-//                  onChanged: (value) {
-//                    email = value;
-//                  },
-//                ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'Password'),
-//                  onChanged: (value) {
-//                    password = value;
-//                  },
-//                ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'phone Number'),
-//                  onChanged: (value) {
-//                    phone = value;
-//                  },
-//                ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'Car Name'),
-//                  onChanged: (value) {
-//                    carName = value;
-//                  },
-//                ),
-//                TextField(
-//                  decoration: InputDecoration(hintText: 'Car Model'),
-//                  onChanged: (value) {
-//                    carNumber = value;
-//                  },
-//                ),
+//
                 MaterialButton(
-                    color: Colors.red,
+                    child: Text(
+                      'Confirm',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    color: Colors.blue[600],
                     onPressed: () {
                       signup(name, email, password, phone, carName, carNumber);
                     }),
