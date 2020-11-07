@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
@@ -30,31 +32,40 @@ class _LoginscreenState extends State<Loginscreen> {
                 email = value;
               },
             ),
-            MaterialButton(onPressed: () {
-              signup(email, email);
-            }),
+            MaterialButton(
+                color: Colors.red,
+                onPressed: () {
+                  login(email, email);
+                }),
           ],
         ),
       ),
     );
   }
 
-  signup(name, email) async {
-    var url = "http://127.0.0.1:5000";
-    final http.Response response = await http.post(
-      url,
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{
-        'email': email,
-        'password': password,
-      }),
-    );
+  login(email, password) async {
+    var url =
+        "https://system-parking-hack.herokuapp.com/user/login"; //get request
+    final http.Response response =
+        await http.get(url, headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    }
+//       final queryParameters = {
+//   'name': 'Bob',
+//   'age': '87',
+// };
+//       body: jsonEncode(<String, String>{
+//         'email': email,
+//         'password': password,
+//       }),
+            );
+    // if (response.statusCode == 200) {
+    //   return response.k
+    // }
 
     if (response.statusCode == 201) {
     } else {
-      throw Exception('Failed to create album.');
+      throw Exception('Failed to send ');
     }
   }
 }

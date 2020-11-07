@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Dash(),
+      home: Loginscreen(),
       routes: {
         RegisterScreen.routeName: (_) => RegisterScreen(),
         Loginscreen.routeName: (_) => Loginscreen(),

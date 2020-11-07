@@ -57,9 +57,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 carNumber = value;
               },
             ),
-            MaterialButton(onPressed: () {
-              signup(name, email, password, phone, carName, carNumber);
-            }),
+            MaterialButton(
+                color: Colors.red,
+                onPressed: () {
+                  signup(name, email, password, phone, carName, carNumber);
+                }),
           ],
         ),
       ),
@@ -67,7 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   signup(name, email, password, phone, carName, modelNo) async {
-    var url = "http://127.0.0.1:5000";
+    var url =
+        "https://system-parking-hack.herokuapp.com/user/signup"; //post request
     final http.Response response = await http.post(
       url,
       headers: <String, String>{
@@ -82,10 +85,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
         'carNumber': carNumber
       }),
     );
+    if (response.statusCode == 200) {
+      print('ok');
+    }
 
     if (response.statusCode == 201) {
     } else {
-      throw Exception('Failed to create album.');
+      throw Exception('Failed to send.');
     }
   }
 }
