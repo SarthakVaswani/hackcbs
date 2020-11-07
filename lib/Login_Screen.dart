@@ -16,24 +16,34 @@ class _LoginscreenState extends State<Loginscreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(hintText: 'Name'),
-              onChanged: (value) {
-                email = value;
-              },
+        body: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('image/login.png',
+              ),
+              fit: BoxFit.cover
             ),
-            TextField(
-              decoration: InputDecoration(hintText: 'Email'),
-              onChanged: (value) {
-                email = value;
-              },
-            ),
-            MaterialButton(onPressed: () {
-              signup(email, email);
-            }),
-          ],
+          ),
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(hintText: 'Name'),
+                onChanged: (value) {
+                  email = value;
+                },
+              ),
+              TextField(
+                decoration: InputDecoration(hintText: 'Email'),
+                onChanged: (value) {
+                  email = value;
+                },
+              ),
+              MaterialButton(onPressed: () {
+                signup(email, email);
+              }),
+            ],
+          ),
         ),
       ),
     );
