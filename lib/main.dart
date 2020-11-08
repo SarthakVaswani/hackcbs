@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Home(),
+      debugShowCheckedModeBanner: false,
       routes: {
         RegisterScreen.routeName: (_) => RegisterScreen(),
         Loginscreen.routeName: (_) => Loginscreen(),
@@ -52,9 +53,12 @@ class _HomeState extends State<Home> {
           ),
           ListTile(
             title: Text(
-              'Title',
+              'Parking System',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff130f40)),
             ),
             subtitle: Container(
               padding: EdgeInsets.only(top: 10),

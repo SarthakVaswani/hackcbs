@@ -121,17 +121,40 @@ class _SlotPickerState extends State<SlotPicker> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Container(
-                    padding: EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: FirstTimeField()),
-                Container(
-                    padding: EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: LastTimeField()),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Row(
+                children: [
+                  Container(
+                      padding: EdgeInsets.all(8),
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: FirstTimeField()),
+                  Container(
+                      padding: EdgeInsets.all(8),
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: LastTimeField()),
+                ],
+              ),
+            ),
+            SizedBox(height: 157),
+            MaterialButton(
+              height: 40,
+              minWidth: 200,
+              color: Colors.black,
+              onPressed: () {},
+              child: Text(
+                'Confirm',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 57,
+                    fontWeight: FontWeight.bold),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                ),
+              ),
             ),
           ],
         ),
@@ -145,7 +168,10 @@ class FirstTimeField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      Text('Starting Time '),
+      Text(
+        'Starting Time ',
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
       DateTimeField(
         format: format,
         textAlign: TextAlign.center,
@@ -166,7 +192,10 @@ class LastTimeField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      Text('Ending Time '),
+      Text(
+        'Ending Time ',
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
       DateTimeField(
         format: format,
         textAlign: TextAlign.center,
