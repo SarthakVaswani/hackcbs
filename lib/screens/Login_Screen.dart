@@ -33,10 +33,10 @@ class _LoginscreenState extends State<Loginscreen> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFF84FFFF),
-                Color(0xFF18FFFF),
-                Color(0xFF00E5FF),
-                Color(0xFF00B8D4),
+                Color(0xffdff9fb),
+                Color(0xFFc8d6e5),
+                Color(0xFFc8d6e5),
+                Color(0xffdff9fb),
               ],
               stops: [0.1, 0.4, 0.7, 0.9],
             ),
@@ -48,7 +48,7 @@ class _LoginscreenState extends State<Loginscreen> {
                 padding: const EdgeInsets.only(top: 200),
                 child: Text('Login',
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Color(0xff0c2461),
                         fontSize: 45,
                         fontWeight: FontWeight.bold)),
               ),
@@ -77,7 +77,7 @@ class _LoginscreenState extends State<Loginscreen> {
                             color: Colors.white,
                             child: Icon(
                               MaterialCommunityIcons.email,
-                              color: Colors.blue,
+                              color: Color(0xff1e3799),
                               size: 26.0,
                             ),
                           ),
@@ -136,7 +136,7 @@ class _LoginscreenState extends State<Loginscreen> {
                             color: Colors.white,
                             child: Icon(
                               MaterialCommunityIcons.lock,
-                              color: Colors.blue,
+                              color: Color(0xff1e3799),
                               size: 24.0,
                             ),
                           ),
@@ -173,7 +173,7 @@ class _LoginscreenState extends State<Loginscreen> {
                         borderRadius: BorderRadius.circular(20)),
                     height: 50,
                     minWidth: 220,
-                    color: Colors.deepPurple.withOpacity(.7),
+                    color: Color(0xff1e3799),
                     child: Text(
                       'Confirm',
                       style: TextStyle(
@@ -193,28 +193,25 @@ class _LoginscreenState extends State<Loginscreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 18.0),
+                    padding: const EdgeInsets.only(left: 12.0),
                     child: Text(
                       'New Here ?',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 28.0),
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: MaterialButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
                         height: 30,
                         minWidth: 57,
                         child: Text(
                           'Register',
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
+                              color: Color(0xff0c2461),
+                              fontSize: 30,
                               fontWeight: FontWeight.bold),
                         ),
-                        color: Colors.blue,
                         onPressed: () {
                           Navigator.pushNamed(context, '/registerScreen');
                         }),
