@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hackcbs/screens/Login_Screen.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:hackcbs/services/constants.dart';
 
 class SlotPicker extends StatefulWidget {
-  final ukey;
-  SlotPicker({this.ukey});
+//  final ukey;
+//  SlotPicker({this.ukey});
 
   static const routeName = '/firstPage';
   @override
@@ -25,11 +23,17 @@ class _SlotPickerState extends State<SlotPicker> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/ok.jpg',
-                ),
-                fit: BoxFit.cover),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xffdff9fb),
+                Color(0xFFc8d6e5),
+                Color(0xFFc8d6e5),
+                Color(0xffdff9fb),
+              ],
+              stops: [0.1, 0.4, 0.7, 0.9],
+            ),
           ),
           child: Column(
             children: [
@@ -72,7 +76,7 @@ class _SlotPickerState extends State<SlotPicker> {
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 2,
-                            color: Colors.red,
+                            color: Colors.black87,
                             offset: Offset(0, 1),
                           ),
                         ],
@@ -97,7 +101,7 @@ class _SlotPickerState extends State<SlotPicker> {
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 2,
-                              color: Colors.red,
+                              color: Colors.black87,
                               offset: Offset(0, 1),
                             ),
                           ],
@@ -144,17 +148,17 @@ class _SlotPickerState extends State<SlotPicker> {
                   ],
                 ),
               ),
-              SizedBox(height: 157),
+              SizedBox(height: 110),
               MaterialButton(
-                height: 40,
+                height: 50,
                 minWidth: 200,
-                color: Colors.black,
+                color: Colors.blueAccent.withOpacity(0.8),
                 onPressed: () {},
                 child: Text(
                   'Confirm',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 57,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold),
                 ),
                 shape: RoundedRectangleBorder(
