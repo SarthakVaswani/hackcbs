@@ -425,20 +425,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: MaterialButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
+                          elevation: 0,
+                          // shape: RoundedRectangleBorder(
+                          //     borderRadius: BorderRadius.circular(20)),
                           height: 30,
                           minWidth: 57,
                           child: Text(
                             'Login',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
+                                color: Colors.blue,
+                                fontSize: 21,
                                 fontWeight: FontWeight.bold),
                           ),
-                          color: Colors.blue,
                           onPressed: () {
                             Navigator.pushNamed(context, '/loginScreen');
                           }),

@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 class SlotPicker extends StatefulWidget {
+  static const routeName = '/firstPage';
   @override
   _SlotPickerState createState() => _SlotPickerState();
 }
@@ -28,7 +29,7 @@ class _SlotPickerState extends State<SlotPicker> {
               children: [
                 Padding(
                   padding:
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Container(
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -71,7 +72,7 @@ class _SlotPickerState extends State<SlotPicker> {
               children: [
                 Padding(
                   padding:
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Container(
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -112,12 +113,12 @@ class _SlotPickerState extends State<SlotPicker> {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width/2,
+                    padding: EdgeInsets.all(8),
+                    width: MediaQuery.of(context).size.width / 2,
                     child: FirstTimeField()),
                 Container(
-                  padding: EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width/2,
+                    padding: EdgeInsets.all(8),
+                    width: MediaQuery.of(context).size.width / 2,
                     child: LastTimeField()),
               ],
             ),
@@ -127,6 +128,7 @@ class _SlotPickerState extends State<SlotPicker> {
     );
   }
 }
+
 class FirstTimeField extends StatelessWidget {
   final format = DateFormat("HH:mm");
   @override
@@ -147,6 +149,7 @@ class FirstTimeField extends StatelessWidget {
     ]);
   }
 }
+
 class LastTimeField extends StatelessWidget {
   final format = DateFormat("HH:mm");
   @override

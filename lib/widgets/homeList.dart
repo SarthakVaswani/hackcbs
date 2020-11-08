@@ -6,39 +6,39 @@ import 'package:hackcbs/screens/secondpage.dart';
 import 'package:hackcbs/screens/thirdpage.dart';
 
 class HomeList extends StatelessWidget {
-  final int index;
-  const HomeList(this.index);
+  final String page;
+  final String name;
+  final String image;
+  const HomeList({this.page, this.image, this.name});
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height/3,
-      width: 250,
+      height: MediaQuery.of(context).size.height / 1,
+      width: 265,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
-          onTap: ()  {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (BuildContext context) =>
-              SlotPicker(),),
-            );
-
+          onTap: () {
+            Navigator.pushNamed(context, page);
           },
           child: Container(
             decoration: BoxDecoration(
-//          image: DecorationImage(
-//            image: AssetImage(dashList[index].image),
-//          ),
-             color: Colors.white,
-              borderRadius: BorderRadius.circular(20)
-            ),
-//        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            child: Hero(
-              tag: dashList[index].id,
-              child: ListTile(
-                title: Text(
-                  dashList[index].name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 35),
+                color: Colors.white, borderRadius: BorderRadius.circular(20)),
+            child: Card(
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(image),
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    name,
+                    style: TextStyle(fontSize: 40, color: Colors.white),
+                  ),
                 ),
               ),
             ),

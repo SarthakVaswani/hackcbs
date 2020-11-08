@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackcbs/screens/Login_Screen.dart';
+import 'package:hackcbs/screens/firstpage.dart';
+import 'package:hackcbs/screens/secondpage.dart';
+import 'package:hackcbs/screens/thirdpage.dart';
 
 import 'screens/dashboard.dart';
 import 'package:hackcbs/screens/register_Screen.dart';
@@ -22,7 +25,10 @@ class _MyAppState extends State<MyApp> {
       routes: {
         RegisterScreen.routeName: (_) => RegisterScreen(),
         Loginscreen.routeName: (_) => Loginscreen(),
-        Dash.routeName: (_) => Dash()
+        Dash.routeName: (_) => Dash(),
+        SlotPicker.routeName: (_) => SlotPicker(),
+        SlotPicker2.routeName: (_) => SlotPicker2(),
+        SlotPicker3.routeName: (_) => SlotPicker3()
       },
     );
   }
