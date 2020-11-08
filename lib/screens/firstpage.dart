@@ -23,77 +23,60 @@ class _SlotPickerState extends State<SlotPicker> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text(
-                'Pick your slot',
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                  'assets/images/ok.jpg',
+                ),
+                fit: BoxFit.cover),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  'Pick your slot',
+                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 2,
-                            color: Colors.black87,
-                            offset: Offset(0, 1),
-                          ),
-                        ],
-                        color: flag == 1 ? Colors.blue : Colors.green,
-                        borderRadius: BorderRadius.circular(20)),
-                    height: 150,
-                    width: 150,
-                    child: GestureDetector(
-                      onTap: () {
-                        // datafile.mapp = 1;
-                        // this.onID();
-                      },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 2,
+                              color: Colors.black87,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                          color: flag == 1 ? Colors.blue : Colors.green,
+                          borderRadius: BorderRadius.circular(20)),
+                      height: 150,
+                      width: 150,
+                      child: GestureDetector(
+                        onTap: () {
+                          // datafile.mapp = 1;
+                          // this.onID();
+                        },
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 2,
-                          color: Colors.black87,
-                          offset: Offset(0, 1),
-                        ),
-                      ],
-                      color: Colors.blueGrey[50],
-                      borderRadius: BorderRadius.circular(20)),
-                  height: 150,
-                  width: 150,
-                  child: GestureDetector(
-                    onTap: () {},
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  child: Container(
+                  Container(
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 2,
-                            color: Colors.black87,
+                            color: Colors.red,
                             offset: Offset(0, 1),
                           ),
                         ],
-                        color: flag == 1 ? Colors.blue : Colors.green,
+                        color: Colors.blueGrey[50],
                         borderRadius: BorderRadius.circular(20)),
                     height: 150,
                     width: 150,
@@ -101,62 +84,88 @@ class _SlotPickerState extends State<SlotPicker> {
                       onTap: () {},
                     ),
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 2,
-                          color: Colors.black87,
-                          offset: Offset(0, 1),
-                        ),
-                      ],
-                      color: Colors.blueGrey[50],
-                      borderRadius: BorderRadius.circular(20)),
-                  height: 150,
-                  width: 150,
-                  child: GestureDetector(
-                    onTap: () {},
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: Row(
-                children: [
-                  Container(
-                      padding: EdgeInsets.all(8),
-                      width: MediaQuery.of(context).size.width / 2,
-                      child: FirstTimeField()),
-                  Container(
-                      padding: EdgeInsets.all(8),
-                      width: MediaQuery.of(context).size.width / 2,
-                      child: LastTimeField()),
                 ],
               ),
-            ),
-            SizedBox(height: 157),
-            MaterialButton(
-              height: 40,
-              minWidth: 200,
-              color: Colors.black,
-              onPressed: () {},
-              child: Text(
-                'Confirm',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 57,
-                    fontWeight: FontWeight.bold),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 2,
+                              color: Colors.red,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                          color: flag == 1 ? Colors.blue : Colors.green,
+                          borderRadius: BorderRadius.circular(20)),
+                      height: 150,
+                      width: 150,
+                      child: GestureDetector(
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 2,
+                            color: Colors.black87,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+                        color: Colors.blueGrey[50],
+                        borderRadius: BorderRadius.circular(20)),
+                    height: 150,
+                    width: 150,
+                    child: GestureDetector(
+                      onTap: () {},
+                    ),
+                  ),
+                ],
               ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  topRight: Radius.circular(12),
+              Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: Row(
+                  children: [
+                    Container(
+                        padding: EdgeInsets.all(8),
+                        width: MediaQuery.of(context).size.width / 2,
+                        child: FirstTimeField()),
+                    Container(
+                        padding: EdgeInsets.all(8),
+                        width: MediaQuery.of(context).size.width / 2,
+                        child: LastTimeField()),
+                  ],
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 157),
+              MaterialButton(
+                height: 40,
+                minWidth: 200,
+                color: Colors.black,
+                onPressed: () {},
+                child: Text(
+                  'Confirm',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 57,
+                      fontWeight: FontWeight.bold),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
