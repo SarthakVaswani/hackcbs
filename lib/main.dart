@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackcbs/screens/Login_Screen.dart';
-import 'package:hackcbs/screens/slot.dart';
+
 import 'screens/dashboard.dart';
 import 'package:hackcbs/screens/register_Screen.dart';
 

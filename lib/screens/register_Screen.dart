@@ -394,8 +394,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: MaterialButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      height: 62,
-                      minWidth: 250,
+                      height: 50,
+                      minWidth: 220,
                       child: Text(
                         'Confirm',
                         style: TextStyle(
@@ -414,6 +414,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 60,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 18.0),

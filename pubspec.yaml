@@ -31,6 +31,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  datetime_picker_formfield: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -45,6 +46,10 @@ flutter:
   assets:
       - assets/images/login.png
       - assets/images/user.png
+      - assets/images/map.jpg
+      - assets/images/ONE.jpg
+      - assets/images/second.jpg
+      - assets/images/third.jpg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

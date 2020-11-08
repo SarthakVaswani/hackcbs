@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 class SlotPicker extends StatefulWidget {
   @override
@@ -18,7 +20,7 @@ class _SlotPickerState extends State<SlotPicker> {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
                 'Pick your slot',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
               ),
             ),
             Row(
@@ -26,7 +28,7 @@ class _SlotPickerState extends State<SlotPicker> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Container(
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -69,7 +71,7 @@ class _SlotPickerState extends State<SlotPicker> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Container(
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -107,9 +109,61 @@ class _SlotPickerState extends State<SlotPicker> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(8),
+                    width: MediaQuery.of(context).size.width/2,
+                    child: FirstTimeField()),
+                Container(
+                  padding: EdgeInsets.all(8),
+                    width: MediaQuery.of(context).size.width/2,
+                    child: LastTimeField()),
+              ],
+            ),
           ],
         ),
       ),
     );
+  }
+}
+class FirstTimeField extends StatelessWidget {
+  final format = DateFormat("HH:mm");
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: <Widget>[
+      Text('Starting Time '),
+      DateTimeField(
+        format: format,
+        textAlign: TextAlign.center,
+        onShowPicker: (context, currentValue) async {
+          final time = await showTimePicker(
+            context: context,
+            initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+          );
+          return DateTimeField.convert(time);
+        },
+      ),
+    ]);
+  }
+}
+class LastTimeField extends StatelessWidget {
+  final format = DateFormat("HH:mm");
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: <Widget>[
+      Text('Ending Time '),
+      DateTimeField(
+        format: format,
+        textAlign: TextAlign.center,
+        onShowPicker: (context, currentValue) async {
+          final time = await showTimePicker(
+            context: context,
+            initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+          );
+          return DateTimeField.convert(time);
+        },
+      ),
+    ]);
   }
 }
