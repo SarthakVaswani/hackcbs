@@ -9,7 +9,9 @@ class HomeList extends StatelessWidget {
   final String page;
   final String name;
   final String image;
-  const HomeList({this.page, this.image, this.name});
+  final int ukey;
+  final String mapp;
+  const HomeList({this.page, this.image, this.name, this.ukey, this.mapp});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,11 +21,13 @@ class HomeList extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
           onTap: () {
-            Navigator.pushNamed(context, page);
+            Navigator.of(context).pushNamed(page);
           },
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
             child: Card(
               child: Container(
                 decoration: BoxDecoration(

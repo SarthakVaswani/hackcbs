@@ -46,17 +46,22 @@ class _DashState extends State<Dash> {
                       HomeList(
                         name: 'CP',
                         image: 'assets/images/ONE.jpg',
-                        page: '/firstPage',
+                        page: '/firstPage'.routeName,arguments:{
+                          'ukey':1;
+                        },
+                        ukey: 1,
                       ),
                       HomeList(
                         name: 'NSP',
                         image: 'assets/images/second.jpg',
                         page: '/secondPage',
+                        ukey: 2,
                       ),
                       HomeList(
-                        name: 'CP',
+                        name: 'VIPS',
                         image: 'assets/images/third.jpg',
                         page: '/thirdPage',
+                        ukey: 3,
                       ),
                     ],
                   )),

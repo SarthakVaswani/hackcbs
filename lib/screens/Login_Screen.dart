@@ -2,11 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:hackcbs/services/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+var datafile = Lconstants.data;
 
 class Loginscreen extends StatefulWidget {
   static const routeName = '/loginScreen';
@@ -27,14 +29,18 @@ class _LoginscreenState extends State<Loginscreen> {
         resizeToAvoidBottomInset: false,
         body: Container(
           decoration: BoxDecoration(
-          gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFF84FFFF),Color(0xFF18FFFF),
-              Color(0xFF00E5FF),Color(0xFF00B8D4),
-            ],
-            stops: [0.1, 0.4, 0.7, 0.9],),
-           ),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF84FFFF),
+                Color(0xFF18FFFF),
+                Color(0xFF00E5FF),
+                Color(0xFF00B8D4),
+              ],
+              stops: [0.1, 0.4, 0.7, 0.9],
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -82,7 +88,8 @@ class _LoginscreenState extends State<Loginscreen> {
                           scrollPhysics: NeverScrollableScrollPhysics(),
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            contentPadding: EdgeInsets.only(left: 18, right: 18),
+                            contentPadding:
+                                EdgeInsets.only(left: 18, right: 18),
                             hintText: 'Email ID',
 
                             hintStyle: GoogleFonts.ptSerif(
@@ -141,7 +148,8 @@ class _LoginscreenState extends State<Loginscreen> {
                           obscureText: true,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            contentPadding: EdgeInsets.only(left: 22, right: 10),
+                            contentPadding:
+                                EdgeInsets.only(left: 22, right: 10),
                             hintText: '*******',
                             hintStyle: TextStyle(
                               fontSize: 16,
@@ -173,7 +181,6 @@ class _LoginscreenState extends State<Loginscreen> {
                           fontSize: 26,
                           fontWeight: FontWeight.bold),
                     ),
-
                     onPressed: () {
                       login(email, password);
                       Navigator.pushNamed(context, '/dashboard');
@@ -189,7 +196,8 @@ class _LoginscreenState extends State<Loginscreen> {
                     padding: const EdgeInsets.only(left: 18.0),
                     child: Text(
                       'New Here ?',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
@@ -223,26 +231,28 @@ class _LoginscreenState extends State<Loginscreen> {
   login(email, password) async {
     var url =
         "https://system-parking-hack.herokuapp.com/user/login"; //get request
-    final http.Response response =
-        await http.get(url, headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
+    final http.Response response = await http.post(url,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+//
+        body: jsonEncode(<String, String>{
+          'email': email,
+          'password': password,
+        }));
+
+    if (response.statusCode == 200) {
+      datafile = jsonDecode(response.body);
+      print(datafile[0]);
     }
-//       final queryParameters = {
-//   'name': 'Bob',
-//   'age': '87',
-// };
-//       body: jsonEncode(<String, String>{
-//         'email': email,
-//         'password': password,
-//       }),
-            );
-    // if (response.statusCode == 200) {
-    //   return response.k
-    // }
 
     // if (response.statusCode == 201) {
     // } else {
     //   throw Exception('Failed to send ');
     // }
+    //  final queryParameters = {
+//   'name': 'Bob',
+//   'age': '87',
+// };
   }
 }

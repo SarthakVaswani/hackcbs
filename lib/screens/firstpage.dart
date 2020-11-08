@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hackcbs/screens/Login_Screen.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:hackcbs/services/constants.dart';
 
 class SlotPicker extends StatefulWidget {
+  final ukey;
+  SlotPicker({this.ukey});
+
   static const routeName = '/firstPage';
   @override
   _SlotPickerState createState() => _SlotPickerState();
@@ -10,6 +15,9 @@ class SlotPicker extends StatefulWidget {
 
 class _SlotPickerState extends State<SlotPicker> {
   var flag = 0;
+  // void onID(Key id) {
+  //   print('id=$id');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +52,10 @@ class _SlotPickerState extends State<SlotPicker> {
                     height: 150,
                     width: 150,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        // datafile.mapp = 1;
+                        // this.onID();
+                      },
                     ),
                   ),
                 ),
